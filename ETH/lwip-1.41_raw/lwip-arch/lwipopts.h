@@ -64,7 +64,7 @@
 
 /* ---------- DHCP选项---------- */
 //当使用DHCP时此位应该为1,LwIP 0.5.1版本中没有DHCP服务.
-#define LWIP_DHCP               0
+#define LWIP_DHCP               1
 
 /* ---------- UDP选项 ---------- */
 #define LWIP_UDP                1 //使用UDP服务

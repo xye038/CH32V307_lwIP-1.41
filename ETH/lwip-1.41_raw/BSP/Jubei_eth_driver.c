@@ -731,7 +731,7 @@ static uint32_t _SysTick_Config(uint32_t ticks)
     RCC_APB1PeriphClockCmd( RCC_APB1Periph_TIM6, ENABLE );
 
     TIM_TimeBaseInitStructure.TIM_Period = 2-1;
-    TIM_TimeBaseInitStructure.TIM_Prescaler = 36-1;
+    TIM_TimeBaseInitStructure.TIM_Prescaler = 72-1;      //1us进一次中断
     TIM_TimeBaseInitStructure.TIM_ClockDivision = TIM_CKD_DIV1;
     TIM_TimeBaseInitStructure.TIM_CounterMode = TIM_CounterMode_Up;
     TIM_TimeBaseInit( TIM6, &TIM_TimeBaseInitStructure);
@@ -752,7 +752,7 @@ static uint32_t _SysTick_Config(uint32_t ticks)
 
 u32_t sys_now(void)
 {
-    return Sys_Tick;
+    return Sys_Tick;    //ms单位
 }
 
 void TIM6_IRQHandler(void) __attribute__((interrupt("WCH-Interrupt-fast")));
